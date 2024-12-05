@@ -39,7 +39,9 @@ const Users = () => {
         </CardContent>
       </Card>
 
-      <UserCreateDialog open={createModalOpen} onClose={setCreateModalOpen} />
+      <UserCreateDialog 
+      open={createModalOpen} 
+      onClose={setCreateModalOpen} />
     </div>
   );
 };

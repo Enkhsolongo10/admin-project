@@ -18,6 +18,7 @@ import { MoreHorizontal, Settings } from "lucide-react";
 
 export function UsersTable(props) {
   const { data } = props;
+  console.log(data);
   return (
     <div className="w-full">
       <div className="flex items-center py-4">
@@ -29,7 +30,7 @@ export function UsersTable(props) {
             <TableRow>
               <TableHead className="w-1">#</TableHead>
               <TableHead className="w-1">Зураг</TableHead>
-              <TableHead className="w-1">Овог</TableHead>
+              <TableHead className="w-1">Овог</TableHead>   
               <TableHead>Нэр</TableHead>
               <TableHead>И-Мэйл</TableHead>
               <TableHead className="w-1">
@@ -38,7 +39,7 @@ export function UsersTable(props) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {data?.slice(0, 10).map((item, index) => (
+            {data?.map((item, index) => ( 
               <TableRow key={item.id}>
                 <TableCell>{index + 1}</TableCell>
                 <TableHead>
@@ -47,10 +48,10 @@ export function UsersTable(props) {
                     <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
                 </TableHead>
-                <TableHead>Нармандах</TableHead>
-                <TableHead>Тэмүүлэн</TableHead>
-                <TableHead>boldoo@gmail.com</TableHead>
-                <TableHead className="w-1">
+                <TableHead>{item.lastname}</TableHead>
+                <TableHead>{item.firstname}</TableHead>         
+                <TableHead>{item.email}</TableHead>
+                <TableHead className="w-1">  
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" className="w-8 h-8 p-0">
@@ -74,4 +75,4 @@ export function UsersTable(props) {
       </div>
     </div>
   );
-}
+}             
